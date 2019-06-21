@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+
 unsigned int gcd(const unsigned int a, const unsigned int b){
   return (b == 0) ? a : gcd(b, a % b);
 }
@@ -14,3 +15,4 @@ int main(){
   
   return 0;
 }
+

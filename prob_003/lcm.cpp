@@ -1,4 +1,7 @@
 #include <iostream>
+#include <numeric>
+#include <vector>
+
 using namespace std;
 
 unsigned int gcd(const unsigned int a, const unsigned int b){
@@ -13,11 +16,23 @@ unsigned int lcm(const unsigned int a, const unsigned int b){
   
 }
 
+template<class InputIt>
+unsigned int lcmr(InputIt first, InputIt last){
+  return accumulate(first, last, 1, lcm);
+}
+
+
 int main(void){
 
-  unsigned int a, b;
-  cout << "input a, b:\n";
-  cin >> a >> b;
-  cout << "lcm(a,b)=" << lcm(a,b) << endl;
+  unsigned int inputNum;
+  cout << "Input # of numbers:";
+  cin >> inputNum;
+  cout << "Input " << inputNum << " numbers:";
+  vector<unsigned int> a(inputNum);
+  for(int i = 0; i < inputNum; i++){
+    cin >> a[i];
+  }
+
+  cout << lcmr(a.begin(), a.end()) << endl;
   
 }
