@@ -1,0 +1,6 @@
+program mkdir
+
+  implicit none
+
+
+end program mkdir
